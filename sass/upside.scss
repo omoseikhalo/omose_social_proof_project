@@ -1,0 +1,103 @@
+@use "./util/colors" as colors;
+
+.content-upside {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .upside_title {
+        display: block;
+        width: 40%;
+        padding: 1em;
+        h1 {
+            display: block;
+            font-family: "Spartan", sans-serif;
+            font-size: 3.5vw;
+            color: colors.$very_dark_magenta;
+            width: 100%;
+        }
+        p {
+            display: block;
+            width: 100%;
+            font-family: "Spartan", sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.6;
+            color: colors.$dark_gray_magenta;
+        }
+    }
+    .upside_rated {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        width: 60%;
+        margin-top: 3em;
+        .rated-card {
+            display: block;
+            width: 70%;
+            background-color: colors.$light_gray_magenta;
+            border-radius: 4px;
+            .card-icon {
+                display: inline-block;
+                margin-left: 1.5em;
+            }
+            p {
+                display: inline-block;
+                font-family: "Spartan", sans-serif;
+                font-weight: 700;
+                font-size: 1vw;
+                margin-left: 2em;
+                color: colors.$very_dark_magenta;
+            }
+            &:nth-child(1) {
+                animation: appearFromTheRight 1s;
+            }
+            &:nth-child(2) {
+                animation: appearFromTheRight4em 1.5s forwards;
+            }
+            &:nth-child(3) {
+                animation: appearFromTheRight8em 2s forwards;
+            }
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .content-upside {
+        flex-direction: column;
+        .upside_title {
+            width: 100%;
+            padding: 0;
+            h1 {
+                width: 100%;
+                text-align: center;
+                font-size: 3rem;
+                line-height: 1;
+            }
+            p {
+                text-align: center;
+                font-size: 1.1rem;
+            }
+        }
+        .upside_rated {
+            width: 100%;
+            margin: auto;
+            .rated-card {
+                width: 100%;
+                padding-top: 1em;
+                .card-icon {
+                    display: flex;
+                    justify-content: center;
+                    width: 50%;
+                    margin: auto;
+                    gap: 0.5em;
+                }
+                p {
+                    text-align: center;
+                    width: 100%;
+                    margin-left: 0;
+                    font-size: 2vw;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@use "./util/colors" as colors;
+
+.content-downside {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    font-family: "Spartan", sans-serif;
+    .downside-quote-card {
+        display: block;
+        background-color: colors.$very_dark_magenta;
+        padding: 1.5em;
+        border-radius: 8px;
+        .quote-header {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: start;
+            .img-profile {
+                display: block;
+                img {
+                    border-radius: 100%;
+                    width: 80%;
+                }
+            }
+            .name-role {
+                font-size: 1rem;
+                p {
+                    display: block;
+                    font-weight: 700;
+                    margin-top: 0.5em;
+                    margin-bottom: 0.5em;
+                    color: colors.$white;
+                }
+                span {
+                    color: colors.$soft_pink;
+                }
+            }
+        }
+        .quote-body {
+            display: block;
+            p {
+                color: colors.$white;
+                font-size: 0.8rem;
+                font-weight: lighter;
+                line-height: 1.8;
+            }
+        }
+        &:nth-child(1) {
+            animation: appeaFromTheBottom 1s;
+        }
+        &:nth-child(2) {
+            animation: appeaFromTheBottom1em 1.5s forwards;
+        }
+        &:nth-child(3) {
+            animation: appeaFromTheBottom2em 2s forwards;
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .content-downside {
+        flex-direction: column;
+        margin-top: 2em;
+    }
+}
